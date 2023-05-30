@@ -84,8 +84,8 @@ const BinarySearch = () => {
   return (
     <div>
       <h2>{title}</h2>
+      <input type="checkbox" onChange={(e) => setIsCompleted(e.target.checked)} /><span>Completed?</span>
       <div>
-        <input type="checkbox" onChange={(e) => setIsCompleted(e.target.checked)} /><span>Completed?</span>
         <h3>Binary Search Definition</h3>
         <ul>{binarySearchDefinitionListItems}</ul>
       </div>
