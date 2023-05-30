@@ -5,12 +5,12 @@ import React, {useState} from "react";
 import Searching from "../components/Searching/Searching";
 import LinearSearch from "../components/Searching/LinearSearch/LinearSearch";
 import BinarySearch from "../components/Searching/BinarySearch/BinarySearch";
-import SearchingExercises from "../components/Searching/SearchingExercises";
+import SearchingQuestions from "../components/Searching/SearchingQuestions";
 
 const SearchPage = () => {
   const [isLinearSearchVisible, setisLinearSearchVisible] = useState(false);
   const [isBinarySearchVisible, setIsBinarySearchVisible] = useState(false);
-  const [isSearchingExercisesVisible, setIsSearchingExercisesVisible] = useState(true);
+  const [isSearchingQuestionsVisible, setSearchingQuestionsVisible] = useState(true);
   
   return (
     <div>
@@ -19,8 +19,8 @@ const SearchPage = () => {
         {isLinearSearchVisible && <LinearSearch />}
         <button onClick={() => setIsBinarySearchVisible((prevState: boolean) => !prevState)}>Show Binary Search</button>
         {isBinarySearchVisible && <BinarySearch />}
-        <button onClick={() => setIsSearchingExercisesVisible((prevState: boolean) => !prevState)}>Show Searching Exercises</button>
-        {isSearchingExercisesVisible && <SearchingExercises />}
+        <button onClick={() => setSearchingQuestionsVisible((prevState: boolean) => !prevState)}>Show Searching Exercises</button>
+        {isSearchingQuestionsVisible && <SearchingQuestions />}
     </div>
   );
 }
