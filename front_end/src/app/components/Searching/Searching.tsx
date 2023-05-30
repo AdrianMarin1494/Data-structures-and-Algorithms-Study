@@ -29,7 +29,7 @@ const includesDetails: {definition: string, syntax: Array<string>, result: strin
 const Searching = () => {
   const [isCompleted, setIsCompleted] = useState(false);
   const indexOfDetailsSyntaxListItems = indexOfDetails["syntax"].map((item: string, idx: number) => <li key={idx}>{item}</li> );
-  const includesDetailsSyntaxListItems = indexOfDetails["syntax"].map((item: string, idx: number) => <li key={idx}>{item}</li> );
+  const includesDetailsSyntaxListItems = includesDetails["syntax"].map((item: string, idx: number) => <li key={idx}>{item}</li> );
   
   return (
     <div>

@@ -10,7 +10,7 @@ import SearchingExercises from "../components/Searching/SearchingExercises";
 const SearchPage = () => {
   const [isLinearSearchVisible, setisLinearSearchVisible] = useState(false);
   const [isBinarySearchVisible, setIsBinarySearchVisible] = useState(false);
-  const [isSearchingExercisesVisible, setIsSearchingExercisesVisible] = useState(false);
+  const [isSearchingExercisesVisible, setIsSearchingExercisesVisible] = useState(true);
   
   return (
     <div>
@@ -19,7 +19,8 @@ const SearchPage = () => {
         {isLinearSearchVisible && <LinearSearch />}
         <button onClick={() => setIsBinarySearchVisible((prevState: boolean) => !prevState)}>Show Binary Search</button>
         {isBinarySearchVisible && <BinarySearch />}
-        <button onClick={() => setIsSearchingExercisesVisible((prevState: boolean) => !prevState)}></button>
+        <button onClick={() => setIsSearchingExercisesVisible((prevState: boolean) => !prevState)}>Show Searching Exercises</button>
+        {isSearchingExercisesVisible && <SearchingExercises />}
     </div>
   );
 }
