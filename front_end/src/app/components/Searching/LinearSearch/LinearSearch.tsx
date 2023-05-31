@@ -2,6 +2,8 @@
 
 import React, {useState} from "react";
 
+import LinearSearchExampleImage from "./LinearSearchExampleImage";
+
 const linearSearchDefinition: string = "Given an array, the simplest way to search for an value is to look at every element in the array and check if it's the value we want";
 const linearSearchExample: Array<string> = [
   "const myArr = [1, 2, 7, 8, 5]",
@@ -38,11 +40,15 @@ const linearSearchBigO: Array<string> = [
 
 const LinearSearch = () => {
   const [isCompleted, setIsCompleted] = useState(false);
-  const [isCodeVisible, setIsCodeVisible] = useState(false);
+  const [isExampleImageVisible, setIsExampleImageVisible] = useState(false);
 
   const title: string = "Linear Search";
   const linearSearchExampleListItems = linearSearchExample.map((item: string, idx: number) => <li key={idx}>{item}</li>)
   const linearSearchBigOListItems = linearSearchBigO.map((item: string, idx: number) => <li key={idx}>{item}</li>);
+
+  const showExampleImageHandler = () => {
+    setIsExampleImageVisible(prevState => !prevState)
+  };
 
   return (
     <div>
@@ -52,9 +58,10 @@ const LinearSearch = () => {
         <h3>Linear Search definition</h3>
         <p>{linearSearchDefinition}</p>
       </div>
-      <div onClick={() => {setIsCodeVisible(prevState => !prevState)}}>
+      <div onClick={showExampleImageHandler}>
         <h3>Linear Search example</h3>
         <ul>{linearSearchExampleListItems}</ul>
+        {isExampleImageVisible && <LinearSearchExampleImage />}
       </div>
       <div>
         <h3>Linear Search Big O</h3>
