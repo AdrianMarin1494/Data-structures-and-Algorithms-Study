@@ -50,6 +50,13 @@ const LinearSearch = () => {
     setIsExampleImageVisible(prevState => !prevState)
   };
 
+  const hideHandler = (status: boolean) => {  
+    setIsExampleImageVisible(status);
+    console.log("onParent");
+    console.log(status);
+    console.log(isExampleImageVisible);
+  };
+
   return (
     <div>
       <h2>{title}</h2>
@@ -58,10 +65,10 @@ const LinearSearch = () => {
         <h3>Linear Search definition</h3>
         <p>{linearSearchDefinition}</p>
       </div>
-      <div onClick={showExampleImageHandler}>
-        <h3>Linear Search example</h3>
+      <div>
+        <h3>Linear Search example</h3><button onClick={showExampleImageHandler}>Show Image</button>
         <ul>{linearSearchExampleListItems}</ul>
-        {isExampleImageVisible && <LinearSearchExampleImage />}
+        {isExampleImageVisible && <LinearSearchExampleImage onHide={hideHandler}/>}
       </div>
       <div>
         <h3>Linear Search Big O</h3>

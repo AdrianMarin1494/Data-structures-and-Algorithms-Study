@@ -42,6 +42,7 @@ const SearchingQuestions = () => {
                 <label htmlFor="secondAnswer">{questionsAndAnswers[1]["answers"]["secondAnswer"]}</label>
             </div>
             <p>Score: {correctAnswersCounter} ({(correctAnswersCounter / questionsAndAnswers.length) * 100}%)</p>
+            <p>{correctAnswersCounter / questionsAndAnswers.length >= 0.5 ? "You passed" : "Try again"}</p>
         </div>
     );
 };
